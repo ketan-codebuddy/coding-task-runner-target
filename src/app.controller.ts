@@ -10,4 +10,12 @@ export class AppController {
       endpoints: ['/tasks'],
     };
   }
+
+  @Get('api/info')
+  getInfo() {
+    return {
+      name: 'Task API',
+      timestamp: new Date().toISOString(),
+    };
+  }
 }
