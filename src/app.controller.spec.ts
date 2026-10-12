@@ -14,4 +14,8 @@ describe('AppController', () => {
   it('returns the project welcome message', () => {
     expect(controller.getHome().name).toBe('Task API');
   });
+
+  it('returns the health status', () => {
+    expect(controller.getHealth()).toEqual({ status: 'ok' });
+  });
 });
