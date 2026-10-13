@@ -13,6 +13,11 @@ npm run start:dev
 ```
 The API listens on `http://localhost:3000`.
 
+Set `AUTH_TOKEN` to a non-empty secret to protect all `/tasks` endpoints. Clients
+must send it as `Authorization: Bearer <token>`. When `AUTH_TOKEN` is unset or
+empty, authentication is disabled for local development. The `/` welcome route
+remains public.
+
 ## Endpoints
 | Method | URL | Description |
 | --- | --- | --- |
