@@ -22,6 +22,11 @@ The API listens on `http://localhost:3000`.
 | POST | `/tasks` | Create a task |
 | PATCH | `/tasks/:id` | Update a task |
 | DELETE | `/tasks/:id` | Delete a task |
+| GET | `/users` | List users |
+| GET | `/users/:id` | Get one user |
+| POST | `/users` | Create a user |
+| PATCH | `/users/:id` | Update a user |
+| DELETE | `/users/:id` | Delete a user |
 
 Create a task from PowerShell:
 ```powershell
@@ -32,6 +37,6 @@ Invoke-RestMethod -Method Post `
 ```
 
 ## Notes
-- Tasks are stored in memory and reset when the server restarts.
+- Tasks and users are stored in memory and reset when the server restarts.
 - No real credentials or external service keys are included.
 - Good first runner experiment: ask your runner to add validation for task titles, then inspect the diff and run `npm test` and `npm run build`.
