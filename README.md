@@ -13,6 +13,11 @@ npm run start:dev
 ```
 The API listens on `http://localhost:3000`.
 
+Set `AUTH_TOKEN` to a long, random secret before starting the API. All `/tasks`
+endpoints require it in the `Authorization` header as `Bearer <token>`. The `/`
+welcome endpoint remains public. If `AUTH_TOKEN` is unset, task endpoints return
+`503 Service Unavailable` instead of running without authentication.
+
 ## Endpoints
 | Method | URL | Description |
 | --- | --- | --- |
@@ -27,6 +32,7 @@ Create a task from PowerShell:
 ```powershell
 Invoke-RestMethod -Method Post `
   -Uri http://localhost:3000/tasks `
+  -Headers @{ Authorization = 'Bearer replace-with-a-long-random-token' } `
   -ContentType 'application/json' `
   -Body '{"title":"Add task filtering","description":"Filter tasks by status"}'
 ```
